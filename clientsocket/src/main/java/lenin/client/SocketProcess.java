@@ -1,10 +1,22 @@
 package lenin.client;
 
-import java.util.List;
-
+/**
+ * Contrato del ciclo de vida del cliente sobre el socket.
+ *
+ * Los mensajes son String con el formato de la Capa 2 del protocolo, no
+ * objetos serializados por Java.
+ */
 public interface SocketProcess {
-  public boolean connect();
-  public List<Object> listen();
-  public boolean response(List<Object> data);
-  public boolean close();
+
+  /** Abre la sesion sobre el socket ya conectado. */
+  boolean connect();
+
+  /** Envia una peticion al servidor. */
+  boolean response(String message);
+
+  /** Lee la respuesta del servidor. Devuelve null si el servidor cerro. */
+  String listen();
+
+  /** Cierra la sesion. */
+  boolean close();
 }
