@@ -185,3 +185,4 @@ programa: **gRPC**, **Apache Thrift** o **Java RMI** generan automáticamente el
 serialización y transporte a partir de una definición del contrato. Por dentro hacen exactamente
 lo que hay aquí — framing, encoding y despacho de comandos — con formatos más eficientes y
 manejo de errores más completo.
+
